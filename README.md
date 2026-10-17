@@ -1,58 +1,38 @@
-# ESP32 Projects Workspace
+# ESP32 Projects
 
-This workspace contains three related ESP32 and embedded systems experiments:
+A collection of ESP32 and embedded systems projects, from a touchscreen smart display to ESP32-CAM experiments.
 
-## 1) ERINX Smart Hub
+## Projects
 
-Location: `ERINX Smart Hub/`
+### ERINX Smart Hub
 
-This is the main project in the workspace. It is an ESP32-S3 smart display project with a touchscreen UI, weather data, clock, DHT11 sensor handling, gallery support, SD card media, and a silent EVM video player.
+The organized project for an ESP32-S3 touchscreen display with weather, clock, indoor climate sensing, photo gallery, and silent video playback.
 
-Key areas:
-- `firmware/` — final and experimental Arduino source files
-- `hardware/` — configuration and wiring references
-- `sd_card/` — media files to copy onto the SD card
-- `tools/` — photo and video conversion utilities
-- `docs/` — setup, testing, and release documentation
+- **Recommended starting point:** [Project guide](ERINX%20Smart%20Hub/README.md)
+- **Official final release:** V5.1.3 UI Controls
+- **Firmware:** [`firmware/final/`](ERINX%20Smart%20Hub/firmware/final/)
+- **Setup and testing:** [Hardware and software setup](ERINX%20Smart%20Hub/docs/HARDWARE_AND_SETUP.md) · [Testing checklist](ERINX%20Smart%20Hub/docs/TESTING_CHECKLIST.md)
+- **V5.2 browser file manager:** preserved as an experimental build; it is not the official final release.
 
-See the project README in [ERINX Smart Hub/README.md](ERINX%20Smart%20Hub/README.md).
+### Face Follower Robot
 
-## 2) Face Follower Robot
+ESP32-CAM streaming and face-tracking prototypes, with several firmware and client iterations.
 
-Location: `Face Follower Robot/`
+- **Recommended starting point:** [Project guide](Face%20Follower%20Robot/README.md)
+- Browse `V1/`, `V2 new/`, and `V3/` for the different experiments.
+- These versions are prototypes and may need hardware, network, or dependency setup.
 
-This project explores ESP32-CAM computer vision and face-following concepts. It includes experiments for a live camera stream and several iterations of a face-following client setup.
+### TFT Project Archive
 
-Key areas:
-- `test.cpp` — ESP32-CAM live stream server example
-- `V1/` — early face follower implementation
-- `V2 new/` — newer media pipe-based client versions
-- `V3/` — later experimental version
+Historical display tests and packaged ERINX Smart Hub V4/V5 development builds. Use this archive to compare earlier versions; use the organized Smart Hub project for the documented V5.1.3 release.
 
-See the project README in [Face Follower Robot/README.md](Face%20Follower%20Robot/README.md).
-
-## 3) TFT project
-
-Location: `TFT project/`
-
-This is a development archive and historical progression of the ERINX Smart Hub experiments. It contains early display and touch tests, weather examples, and multiple V4/V5 prototype folders.
-
-Key areas:
-- `01_` to `06_` test folders — early learning and prototype builds
-- `ERINX_Smart_Hub_V5_*` folders — development releases and diagnostics
-- `assets/`, `config/`, `docs/` — supporting resources
-
-See the project README in [TFT project/README.md](TFT%20project/README.md).
+- **Recommended starting point:** [Archive guide](TFT%20project/README.md)
+- Find early tests, versioned firmware packages, diagnostics, and historical assets here.
 
 ## Quick start
 
-- For the current main project: open [ERINX Smart Hub/README.md](ERINX%20Smart%20Hub/README.md)
-- For the camera and vision experiments: open [Face Follower Robot/README.md](Face%20Follower%20Robot/README.md)
-- For historical firmware/tests: open [TFT project/README.md](TFT%20project/README.md)
+1. Choose a project above and open its guide.
+2. Check its hardware, library, and setup requirements before building or uploading firmware.
+3. Keep Wi-Fi credentials and other personal secrets out of committed source files.
 
-## Notes
-
-These folders are related but represent different stages of development:
-- the Smart Hub project is the most polished and documented
-- the Face Follower Robot is a computer-vision experimental branch
-- the TFT project is a historical archive of earlier firmware and testing iterations
+Each project has its own setup and maturity level. The Smart Hub is the most fully documented; the Face Follower and TFT archive contain experimental and historical work.
