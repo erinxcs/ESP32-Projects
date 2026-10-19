@@ -39,8 +39,9 @@ def convert_one(source: Path, target: Path, width: int, height: int, fps: int,
     frame_size = width * height * 3
     frames = 0
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    temporary_target = target.with_name(target.name + '.tmp')
     try:
-        with target.open('wb') as output:
+        with temporary_target.open('wb') as output:
             output.write(HEADER.pack(b'ERXV', width, height, fps, 0, 0))
             while True:
                 data = process.stdout.read(frame_size)
@@ -66,10 +67,11 @@ def convert_one(source: Path, target: Path, width: int, height: int, fps: int,
         if result != 0 or frames == 0:
             message = error_bytes.decode('utf-8', errors='replace').strip()
             raise RuntimeError(message or 'FFmpeg returned no frames')
+        temporary_target.replace(target)
     except Exception:
         process.kill()
         process.wait()
-        target.unlink(missing_ok=True)
+        temporary_target.unlink(missing_ok=True)
         raise
     finally:
         if process.stdout: process.stdout.close()
@@ -86,6 +88,8 @@ def main() -> int:
     parser.add_argument('--width', type=int, default=240, help='Portrait video width (default 240)')
     parser.add_argument('--height', type=int, default=360, help='Portrait video height (default 360)')
     parser.add_argument('--quality', type=int, default=58, help='JPEG quality, 20..85 (default 58)')
+    parser.add_argument('--overwrite', action='store_true',
+                        help='replace existing .evm files (default: skip them)')
     args = parser.parse_args()
     if not shutil.which('ffmpeg'):
         print('ERROR: FFmpeg not found. On Windows run: winget install Gyan.FFmpeg', file=sys.stderr)
@@ -107,12 +111,18 @@ def main() -> int:
     if not inputs:
         print(f'No supported video files found in {source}')
         return 1
+    output_names = [f'{clip.stem.casefold()}.evm' for clip in inputs]
+    if len(output_names) != len(set(output_names)):
+        parser.error('input contains different video files with the same output name; convert them separately')
     destination.mkdir(parents=True, exist_ok=True)
     errors = 0
+    skipped = 0
     for idx, clip in enumerate(inputs, 1):
         target = destination / (clip.stem + '.evm')
-        if target.exists():
-            print(f'WARNING: overwrite existing file: {target}')
+        if target.exists() and not args.overwrite:
+            print(f'SKIPPED existing output (use --overwrite to replace): {target.name}')
+            skipped += 1
+            continue
         try:
             count = convert_one(clip, target, args.width, args.height, args.fps,
                                 args.seconds, args.quality)
@@ -121,7 +131,7 @@ def main() -> int:
         except Exception as error:
             errors += 1
             print(f'FAILED {clip.name}: {error}', file=sys.stderr)
-    print(f'Conversion complete. {len(inputs)-errors} success, {errors} failed.')
+    print(f'Conversion complete. {len(inputs)-errors-skipped} success, {skipped} skipped, {errors} failed.')
     return 1 if errors else 0
 
 
