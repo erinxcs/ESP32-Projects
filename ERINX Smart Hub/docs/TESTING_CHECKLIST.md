@@ -14,7 +14,7 @@ Record an actual **PASS / FAIL / NOT TESTED** and optionally photos/serial outpu
 | T06 | Reboot with saved credentials | Wi-Fi reconnects automatically | NOT RECORDED |
 | T07 | Choose each weather city | Appropriate city data is displayed | NOT RECORDED |
 | T08 | Disconnect Wi-Fi | Offline handling visible, no crash | NOT RECORDED |
-| T09 | Insert/remove microSD safely when powered off | SD status and icons reflect presence | NOT RECORDED |
+| T09 | Boot once with FAT32 microSD inserted, then power off, remove it, and boot again | Media pages load with the card; SD-dependent pages show an offline message without a crash when it is absent | NOT RECORDED |
 | T10 | Open JPEG gallery and slideshow | Media loads and navigation works | NOT RECORDED |
 | T11 | Play a valid `.evm` clip | Silent video frames render | NOT RECORDED |
 | T12 | Clock and animated eyes | Time refreshes and eye movement is visible | NOT RECORDED |
