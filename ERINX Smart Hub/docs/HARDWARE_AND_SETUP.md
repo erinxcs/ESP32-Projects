@@ -29,6 +29,8 @@
 
 ## microSD card root example
 
+The final firmware mounts the board's built-in microSD through SDMMC in **1-bit mode** at startup (CLK GPIO39, CMD GPIO38, D0 GPIO40). Insert or remove the card only while the board is powered off, then restart the board so the firmware can detect the card state.
+
 ```text
 /
   icons/
