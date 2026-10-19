@@ -4,12 +4,13 @@ This directory preserves the original ERINX Smart Hub experiments and release-st
 
 ## Recommended starting point
 
-Use the organized project at [`../ERINX_Smart_Hub/`](../ERINX_Smart_Hub/) for the current source, hardware setup, deduplicated SD-card assets, tools, and documentation.
+Use the organized project at [`../ERINX Smart Hub/`](../ERINX%20Smart%20Hub/) for the documented V5.1.3 release, hardware setup, SD-card assets, tools, and documentation.
 
 | Need | Open this |
 |---|---|
-| Current V5.2 firmware | [`../ERINX_Smart_Hub/firmware/final/ERINX_Smart_Hub_V5_2/`](../ERINX_Smart_Hub/firmware/final/ERINX_Smart_Hub_V5_2/) |
-| Main project guide | [`../ERINX_Smart_Hub/README.md`](../ERINX_Smart_Hub/README.md) |
+| V5.1.3 final firmware | [`../ERINX Smart Hub/firmware/final/`](../ERINX%20Smart%20Hub/firmware/final/) |
+| V5.2 experimental firmware | [`../ERINX Smart Hub/firmware/experimental/ERINX_Smart_Hub_V5_2/`](../ERINX%20Smart%20Hub/firmware/experimental/ERINX_Smart_Hub_V5_2/) |
+| Main project guide | [`../ERINX Smart Hub/README.md`](../ERINX%20Smart%20Hub/README.md) |
 | FPS benchmark | [`ERINX_V5_1_FPS_Benchmark/README.md`](ERINX_V5_1_FPS_Benchmark/README.md) |
 | SDMMC diagnostic | [`ERINX_Smart_Hub_V5_1_2_SDMMC_DIAGNOSTIC/SDMMC_Board_Probe/`](ERINX_Smart_Hub_V5_1_2_SDMMC_DIAGNOSTIC/SDMMC_Board_Probe/) |
 | Early wiring notes | [`docs/WIRING.md`](docs/WIRING.md) |
