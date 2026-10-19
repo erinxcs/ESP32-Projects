@@ -63,7 +63,7 @@ ERINX_Smart_Hub/
 | Photos | **Baseline JPEG** (not progressive) | 320 × 480 pixels |
 | Video | Custom silent **ERXV `.evm`** container | 240 × 360 at 7 fps default |
 
-An ordinary `.mp4` cannot be played directly. Convert it on a PC first with [`tools/video_converter/convert_videos.py`](tools/video_converter/convert_videos.py) (requires FFmpeg + Pillow). Use [`tools/photo_converter/convert_photos.py`](tools/photo_converter/convert_photos.py) to prepare images (requires Pillow).
+An ordinary `.mp4` cannot be played directly. Use the [media converter guide](tools/README.md) for photo/video formats, dependencies, commands, and output behavior. The scripts are in [`tools/video_converter/`](tools/video_converter/) and [`tools/photo_converter/`](tools/photo_converter/).
 
 ## Technical notes
 
