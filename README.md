@@ -16,6 +16,14 @@ An ESP32-S3 touchscreen display project with weather, a clock, DHT11 climate rea
 
 The V5.2 browser-based file manager is an experimental build. See the project README for version details and instructions.
 
+### AMI OLED Robot Keychain
+
+A compact ESP32-C3 keychain project with a 128 × 64 OLED display, a single-button interface, and a desktop converter for custom MP4/GIF animations.
+
+- **Start here:** [Project README](AMI-OLED-Robot-Keychain/README.md)
+- **Hardware:** Seeed XIAO ESP32C3, SSD1306 OLED, pushbutton, and compatible LiPo battery
+- **Includes:** Arduino firmware, animation converter, sample clips, and printable enclosure files
+
 ### Face Follower Robot
 
 ESP32-CAM streaming and face-tracking experiments, with several firmware and client iterations.
