@@ -1,0 +1,31 @@
+# Python virtual environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# IDE-generated data
+.vscode/
+.idea/
+*.code-workspace
+*.swp
+*.bak
+
+# Arduino build intermediates
+build/
+.pio/
+*.elf
+*.bin
+*.map
+*.hex
+
+# Local output (keep tracked demonstration firmware under firmware/)
+exports/
+dist/
+temp/
+*.log
+.DS_Store
+Thumbs.db
