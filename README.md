@@ -23,6 +23,7 @@ A compact ESP32-C3 keychain project with a 128 × 64 OLED display, a single-butt
 - **Start here:** [Project README](AMI-OLED-Robot-Keychain/README.md)
 - **Hardware:** Seeed XIAO ESP32C3, SSD1306 OLED, pushbutton, and compatible LiPo battery
 - **Includes:** Arduino firmware, animation converter, sample clips, and printable enclosure files
+- **Guides:** [Wiring and hardware](AMI-OLED-Robot-Keychain/docs/hardware.md) · [Animation converter](AMI-OLED-Robot-Keychain/docs/converter.md) · [Enclosure](AMI-OLED-Robot-Keychain/docs/enclosure.md)
 
 ### Face Follower Robot
 
